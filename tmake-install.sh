@@ -28,6 +28,7 @@ for FILE in \
 	"tmake-version.mk" \
 	"tmake-prog.mk" \
 	"tmake-lib.mk" \
+	"tmake-files.mk" \
 	"tmake-subdir.mk" \
 	"tmake-compile.mk" \
 ; do

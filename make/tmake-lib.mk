@@ -36,7 +36,7 @@ all : $(BUILDDIR)/$(SHARED_LIB)
 $(BUILDDIR)/$(SHARED_LIB) : $(SHARED_OBJS)
 	@mkdir -p "$(@D)"
 	@echo "CCLD $(SHARED_LIB)"
-	$(Q)$(CC) -shared $(CFLAGS) -o "$@" $^ $(LDFLAGS)
+	$(Q)$(CC) -shared $(CFLAGS) -Wl,-soname,$(SHARED_LIB) -o "$@" $^ $(LDFLAGS)
 
 install : install-shared
 install-shared : $(BUILDDIR)/$(SHARED_LIB)

@@ -25,6 +25,7 @@ rm -f make/tmake-*.mk
 # keep this in dependencies order
 for FILE in \
 	"tmake-init.mk" \
+	"tmake-version.mk" \
 	"tmake-prog.mk" \
 	"tmake-lib.mk" \
 	"tmake-subdir.mk" \

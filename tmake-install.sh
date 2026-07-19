@@ -1,7 +1,7 @@
 #!/bin/sh
 
 install_file () {
-	if grep -r "include $1" > /dev/null; then
+	if grep -r "include \$(TMAKE_DIR)/$1" > /dev/null; then
 		echo "installing $1 ..."
 		cp "$TMAKE_SRC/$1" "make/"
 	fi

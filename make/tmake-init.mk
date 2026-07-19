@@ -11,7 +11,7 @@ AS ?= as
 LN ?= ln
 LN_S ?= ln -s
 PREFIX ?= /usr/local
-BUILDDIR ?= $(CURDIR)/build
+BUILDDIR ?= $(TOP)/build$(CURDIR:$(abspath $(TOP))%=%)
 TMAKE_DIR ?= $(TOP)/make
 
 ifeq ($(V),1)

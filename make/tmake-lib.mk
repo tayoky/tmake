@@ -2,6 +2,8 @@
 
 LIB ?= $(PACKAGE)
 SRCS ?= $(wildcard *.[cs])
+STATIC ?= yes
+SHARED ?= yes
 HEADERS ?= $(wildcard include/*)
 STATIC_LIB ?= lib$(LIB).a
 SHARED_LIB ?= lib$(LIB).so
@@ -13,7 +15,7 @@ all :
 
 include $(TMAKE_DIR)/tmake-compile.mk
 
-ifneq ($(strip $(STATIC_OBJS)),)
+ifneq ($(STATIC),no)
 all : $(BUILDDIR)/$(STATIC_LIB)
 $(BUILDDIR)/$(STATIC_LIB) : $(STATIC_OBJS)
 	@mkdir -p "$(@D)"
@@ -32,7 +34,7 @@ uninstall-static :
 	$(Q)rm -f "$(DESTDIR)$(LIBDIR)/$(STATIC_LIB)"
 endif
 
-ifneq ($(strip $(SHARED_OBJS)),)
+ifneq ($(SHARED),no)
 all : $(BUILDDIR)/$(SHARED_LIB)
 $(BUILDDIR)/$(SHARED_LIB) : $(SHARED_OBJS)
 	@mkdir -p "$(@D)"

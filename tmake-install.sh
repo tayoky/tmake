@@ -29,6 +29,7 @@ for FILE in \
 	"tmake-prog.mk" \
 	"tmake-lib.mk" \
 	"tmake-locale.mk" \
+	"tmake-incs.mk" \
 	"tmake-files.mk" \
 	"tmake-subdir.mk" \
 	"tmake-compile.mk" \

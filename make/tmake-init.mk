@@ -30,8 +30,7 @@ ifeq ($(BUILDDIR),)
 	BUILDDIR  ?= $(TOP)/build$(SRCDIR:$(abspath $(TOP))%=%)
 endif
 
-CFLAGS += -DPREFIX='"$(PREFIX)"'
-CFLAGS += -DLOCALEDIR='"$(LOCALEDIR)"'
+TMAKE_CFLAGS += -DPREFIX='"$(PREFIX)"' -DLOCALEDIR='"$(LOCALEDIR)"'
 
 ifeq ($(V),1)
 	Q =

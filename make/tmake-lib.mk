@@ -11,7 +11,7 @@ STATIC_LIB ?= lib$(LIB).a
 SHARED_LIB ?= lib$(LIB).so
 STATIC_OBJS += $(SRCNAMES:%=$(BUILDDIR)/%.o)
 SHARED_OBJS += $(SRCNAMES:%=$(BUILDDIR)/%.so)
-CFLAGS := -std=c99 -I ./ $(CFLAGS)
+CFLAGS := -I ./ $(CFLAGS)
 LIBMODE ?= 0744
 
 all :
